@@ -12,7 +12,6 @@ This repository serves as a digital garden for capturing ideas, notes, reflectio
 - **projects/**: Notes related to specific projects or initiatives
 - **references/**: Research, articles, books, and other reference materials
 - **research/**: Detailed research documents, comparisons, and analyses
-  - **tech-comparisons/**: Technology comparison documents
 - **topics/**: Thoughts organized by subject matter or theme
 - **templates/**: Templates for different types of entries
 
