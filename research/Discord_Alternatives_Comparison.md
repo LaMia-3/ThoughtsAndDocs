@@ -1,6 +1,6 @@
 # Self-Hosted Discord Alternatives: Comprehensive Comparison
 
-*Last Updated: February 16, 2026*
+*Last Updated: February 17, 2026*
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -16,6 +16,7 @@
   - [Mumble](#mumble)
   - [TeamSpeak](#teamspeak)
   - [Echoed.gg](#echoedgg)
+  - [Sharkord](#sharkord)
 - [Self-Hosting Requirements](#self-hosting-requirements)
 - [Self-Hosting Guides](#self-hosting-guides)
   - [Stoat/Revolt Self-Hosting](#stoatrevolt-self-hosting-guide)
@@ -43,6 +44,7 @@ This document compares various self-hosted Discord alternatives, focusing on fea
 | Mumble | ❌ | ✅ | ❌ | ⚠️ | ❌ | ✅ | ✅ | Easy |
 | TeamSpeak | ❌ | ✅ | ❌ | ⚠️ | ❌ | ✅ | ✅ | Easy |
 | Echoed.gg | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ⚠️ | Moderate |
+| Sharkord | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ✅ | ⚠️ | Easy |
 
 ✅ = Full support  
 ⚠️ = Limited support  
@@ -415,6 +417,47 @@ Echoed.gg is a newer platform designed for gaming communities with Discord-like 
 - Limited documentation on self-hosting
 - Moderate technical knowledge likely required
 
+### Sharkord
+
+**Overview:**
+Sharkord is a lightweight, self-hosted communication platform designed for small groups who value privacy and simplicity. It offers voice, video, text, and screen sharing without unnecessary bloat.
+
+**Website:** [https://sharkord.com](https://sharkord.com)  
+**GitHub:** [https://github.com/sharkord/sharkord](https://github.com/sharkord/sharkord)
+
+**Pros:**
+- Lightweight and resource-efficient
+- High-quality WebRTC voice, video, and screen sharing
+- Simple, clean interface
+- Easy self-hosting with standalone binary
+- No artificial user limits or premium tiers
+- Full data ownership and privacy
+
+**Cons:**
+- Alpha stage, still maturing
+- Designed for small groups, not large communities
+- Limited bot ecosystem
+- Fewer customization options than Discord
+
+**Missing Features:**
+- Advanced bot integration
+- Extensive sticker/emoji library
+- Mobile apps (currently browser-based)
+- Large community management tools
+
+**Unique Features:**
+- Standalone binary that includes both server and client
+- Optimized for small, private groups
+- Minimal resource requirements
+- Focus on privacy and data ownership
+- No corporate surveillance or data collection
+
+**Self-Hosting Requirements:**
+- Very lightweight (can run on modest hardware)
+- Available as standalone binary or Docker container
+- Simple setup process
+- Requires ports 4991 (TCP) and 40000-40020 (TCP/UDP) for WebRTC
+
 ## Self-Hosting Requirements
 
 ### Server Requirements
@@ -476,6 +519,51 @@ When self-hosting, consider:
 ## Self-Hosting Guides
 
 Here are detailed instructions for self-hosting the most promising alternatives:
+
+### Sharkord Self-Hosting Guide
+
+**Requirements:**
+- A server or VPS with Linux, Windows, or macOS
+- Minimal resources (1+ CPU cores, 512MB+ RAM)
+- Open ports: 4991 (TCP) and 40000-40020 (TCP/UDP) for WebRTC
+- A domain name (optional, but recommended for HTTPS)
+
+**Step-by-Step Instructions:**
+
+1. **Download the binary for your platform:**
+   ```bash
+   # For Linux x64
+   curl -L https://github.com/sharkord/sharkord/releases/latest/download/sharkord-linux-x64 -o sharkord
+   chmod +x sharkord
+   ```
+
+2. **Run the server:**
+   ```bash
+   ./sharkord
+   ```
+   On first launch, Sharkord will generate an owner access token and print it to the console. Save this token securely.
+
+3. **Alternative: Docker installation:**
+   ```bash
+   docker run \
+     -p 4991:4991/tcp \
+     -p 40000-40020:40000-40020/tcp \
+     -p 40000-40020:40000-40020/udp \
+     -v "./data":/root/.config/sharkord \
+     --name sharkord \
+     sharkord/sharkord:latest
+   ```
+
+4. **Access the web interface:**
+   Open your browser and navigate to `http://your-server-ip:4991`
+
+5. **Set up HTTPS (recommended):**
+   For production use, it's recommended to set up HTTPS using a reverse proxy like Caddy. See the [official documentation](https://sharkord.com/docs/https/caddy) for details.
+
+**Additional Resources:**
+- [Official Documentation](https://sharkord.com/docs)
+- [GitHub Repository](https://github.com/sharkord/sharkord)
+- [Live Demo](https://demo.sharkord.com)
 
 ### Stoat/Revolt Self-Hosting Guide
 
@@ -560,6 +648,10 @@ If federation and privacy are priorities, Matrix with Element as the client prov
 ### Best for Technical Communities: Zulip
 
 For communities that prioritize organized discussions over voice chat, Zulip's unique streams and topics model provides superior organization. It's excellent for technical discussions, open-source projects, and communities where searchable, structured conversations matter more than voice features.
+
+### Best for Small, Private Groups: Sharkord
+
+For small groups of friends or teams who prioritize simplicity, privacy, and lightweight resource usage, Sharkord offers an excellent solution. Its standalone binary makes it extremely easy to self-host, and it provides high-quality voice, video, and screen sharing without unnecessary bloat. While it lacks some features for large communities, it's perfect for those who want a private, efficient communication platform.
 
 ### Most Promising Newcomer: Fluxer.app
 
