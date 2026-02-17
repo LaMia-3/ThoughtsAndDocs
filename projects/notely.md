@@ -35,6 +35,8 @@ Notely is a collaborative music review application that allows users to create g
 - [ ] Add social sharing features
 
 ## Resources
+- [Deployed Application](https://notely-nine-beta.vercel.app/login) (Work in Progress - some issues still need to be fixed)
+- [GitHub Repository](https://github.com/LaMia-3/notely)
 - MongoDB Atlas for database
 - Vercel for hosting
 - MusicBrainz API for music metadata

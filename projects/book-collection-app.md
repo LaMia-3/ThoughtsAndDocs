@@ -48,6 +48,7 @@ Book Collection App is a modern web application for tracking and managing your p
 - **UI Components**: shadcn/ui with Tailwind CSS
 - **Storage**: IndexedDB with localStorage for UI preferences
 - **Build Tool**: Vite 5.x
+- **Deployment**: Vercel for continuous deployment and hosting
 - **External APIs**: Google Books API, Open Library API
 
 ## Roadmap
@@ -59,8 +60,7 @@ Book Collection App is a modern web application for tracking and managing your p
 - [x] Reading goals tracking
 - [x] Database troubleshooting tools
 - [ ] Enhanced statistics and insights
-- [ ] Mobile app version
-- [ ] Cloud sync option
+- [ ] Cloud sync option (using MongoDB Atlas)
 - [ ] Social sharing features
 
 ## Notes
@@ -70,7 +70,8 @@ Book Collection App is a modern web application for tracking and managing your p
 - Performance optimizations include virtualization for large collections
 
 ## Resources
-- [GitHub Repository](https://github.com/miprice/book-collection-app)
+- [Deployed App](https://book-collection-app-blue.vercel.app/)
+- [GitHub Repository](https://github.com/LaMia-3/book-collection-app)
 - [Google Books API](https://developers.google.com/books)
 - [Open Library API](https://openlibrary.org/developers/api)
 - [shadcn/ui Documentation](https://ui.shadcn.com)
