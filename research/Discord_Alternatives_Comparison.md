@@ -1,5 +1,7 @@
 # Self-Hosted Discord Alternatives: Comprehensive Comparison
 
+*Last Updated: February 16, 2026*
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Comparison Table](#comparison-table)
@@ -470,7 +472,7 @@ When self-hosting, consider:
 
 ## Recommendations
 
-Based on the requirements specified (text channels, voice quality, streaming, bots, stickers, animated emojis, easy onboarding, and private channels), here are our recommendations:
+Based on the requirements specified (text channels, voice quality, streaming, bots, stickers, animated emojis, easy onboarding, and private channels), here are the recommendations:
 
 ### Best Overall: Stoat/Revolt
 
@@ -487,17 +489,3 @@ For communities that prioritize organized discussions over voice chat, Zulip's u
 ### Most Promising Newcomer: Fluxer.app
 
 Fluxer shows great promise with its Discord-like interface and feature set. While self-hosting is still being refined, it's worth watching as development continues. Its focus on replicating the Discord experience while being open-source makes it an interesting option for the future.
-
-## Conclusion
-
-There is no perfect one-size-fits-all Discord alternative, but several options come close depending on your specific needs:
-
-- **Stoat/Revolt** offers the most Discord-like experience with good all-around features
-- **Matrix/Element** provides the best privacy and federation capabilities
-- **Rocket.Chat** and **Mattermost** are strong for organizations but less community-focused
-- **Zulip** excels at organized discussions but lacks voice features
-- **Fluxer.app** shows promise as a comprehensive alternative still in development
-
-When choosing a platform, consider your community's specific needs, technical capabilities for self-hosting, and which features are most important to your users. Many communities also use a combination of tools (e.g., Matrix for text and Mumble for voice) to get the best of each platform.
-
-This document will be updated as these platforms evolve and new alternatives emerge.
