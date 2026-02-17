@@ -17,8 +17,11 @@
   - [TeamSpeak](#teamspeak)
   - [Echoed.gg](#echoedgg)
 - [Self-Hosting Requirements](#self-hosting-requirements)
+- [Self-Hosting Guides](#self-hosting-guides)
+  - [Stoat/Revolt Self-Hosting](#stoatrevolt-self-hosting-guide)
+  - [Matrix/Element Self-Hosting](#matrixelement-self-hosting-guide)
+  - [Fluxer.app Self-Hosting](#fluxerapp-self-hosting-guide)
 - [Recommendations](#recommendations)
-- [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -469,6 +472,78 @@ When self-hosting, consider:
 - Performance monitoring
 - User management
 - Storage scaling
+
+## Self-Hosting Guides
+
+Here are detailed instructions for self-hosting the most promising alternatives:
+
+### Stoat/Revolt Self-Hosting Guide
+
+**Requirements:**
+- Docker and Docker Compose
+- A domain name with DNS configured
+- 2GB+ RAM, 1+ CPU cores
+
+**Step-by-Step Instructions:**
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/stoatchat/self-hosted.git
+   cd self-hosted
+   ```
+
+2. **Configure the environment:**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit the `.env` file to set your domain, SMTP settings, and other configuration options.
+
+3. **Start the services:**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Set up SSL with Caddy:**
+   The included Caddy configuration will automatically obtain SSL certificates.
+
+5. **Create the first admin user:**
+   Visit `https://your-domain.com` and register. The first user becomes the admin.
+
+**Additional Resources:**
+- [Official Self-Hosting Documentation](https://developers.stoat.chat/self-hosting/)
+- [Docker Hub](https://hub.docker.com/r/stoatchat/server)
+
+### Matrix/Element Self-Hosting Guide
+
+Matrix/Element has a complex setup process that requires multiple components working together. Due to the complexity, I recommend following the official documentation for the most up-to-date instructions.
+
+**Additional Resources:**
+- [Matrix Installation Guide](https://matrix-org.github.io/synapse/latest/setup/installation.html)
+- [Element Web Configuration](https://github.com/vector-im/element-web/blob/develop/docs/config.md)
+- [Matrix Docker-Compose Project](https://github.com/spantaleev/matrix-docker-ansible-deploy)
+
+### Fluxer.app Self-Hosting Guide
+
+> **IMPORTANT MESSAGE FROM THE CREATOR:**
+> 
+> "I know it's hard to resist, but please wait a little longer before you dive deep into the current codebase or try to set up self-hosting. I'm aware the current stack isn't very lightweight. In the next update, self-hosting should be straightforward, with a small set of services: Fluxer Server (TypeScript) using SQLite for persistence, Gateway (Erlang), and optionally LiveKit for voice and video.
+> 
+> Self-hosted deployments won't include any traces of Plutonium, and nothing is paywalled. You can still configure your own tiers and limits in the admin panel.
+> 
+> Thanks for bearing with me. Development on Fluxer is about to get much easier, and the project will be made sustainable through community contributions and bounties for development work. Stay tuned – there's not much left now."
+> 
+> *Source: [Fluxer GitHub Repository](https://github.com/fluxerapp/fluxer)*
+
+Based on the creator's message, it's recommended to wait for the upcoming update before attempting to self-host Fluxer.app. The current implementation is undergoing a major refactor to make it easier to develop and simpler to self-host.
+
+**Future Self-Hosting Stack (Coming Soon):**
+- Fluxer Server (TypeScript) with SQLite for persistence
+- Gateway (Erlang)
+- Optional LiveKit for voice and video
+
+**Additional Resources:**
+- [Fluxer Website](https://fluxer.app)
+- [GitHub Repository](https://github.com/fluxerapp/fluxer)
 
 ## Recommendations
 
